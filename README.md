@@ -29,24 +29,7 @@ two hooks inject a small timestamp before every tool call and every user message
 /plugin install time-awareness@claude-time-awareness
 ```
 
-then add this to your `~/.claude/CLAUDE.md` (or project-level CLAUDE.md):
-
-```
-## Time Awareness
-
-Hook injections give you time data before each tool call and user message:
-`[3:15 PM | ~75 min remaining]`
-
-This only appears when a time budget is active. When you detect a time budget
-from the user (e.g. "I have 2 hours"), write the deadline as a Unix timestamp:
-`echo "$(date -v+2H +%s)" > /tmp/claude-time-budget-$PPID`
-
-Each session gets its own budget file (namespaced by process ID via $PPID).
-
-To clear a budget: `rm -f /tmp/claude-time-budget-$PPID`
-
-No budget file = no injections = no time pressure.
-```
+that's it. the plugin handles everything: hooks, instructions, the lot.
 
 <details>
 <summary>option 2: manual setup</summary>
@@ -80,7 +63,24 @@ No budget file = no injections = no time pressure.
 }
 ```
 
-4. add the same CLAUDE.md snippet from option 1 above
+4. add this to your `~/.claude/CLAUDE.md` (or project-level CLAUDE.md):
+
+```
+## Time Awareness
+
+Hook injections give you time data before each tool call and user message:
+`[3:15 PM | ~75 min remaining]`
+
+This only appears when a time budget is active. When you detect a time budget
+from the user (e.g. "I have 2 hours"), write the deadline as a Unix timestamp:
+`echo "$(date -v+2H +%s)" > /tmp/claude-time-budget-$PPID`
+
+Each session gets its own budget file (namespaced by process ID via $PPID).
+
+To clear a budget: `rm -f /tmp/claude-time-budget-$PPID`
+
+No budget file = no injections = no time pressure.
+```
 
 </details>
 
