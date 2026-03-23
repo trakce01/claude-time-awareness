@@ -1,0 +1,20 @@
+{
+  "name": "claude-time-awareness",
+  "owner": {
+    "name": "Rishit Kurup"
+  },
+  "metadata": {
+    "description": "an experiment in giving claude code a functional sense of time"
+  },
+  "plugins": [
+    {
+      "name": "time-awareness",
+      "source": "./plugins/time-awareness",
+      "description": "Give Claude Code a functional sense of time through passive hook injections",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rishit Kurup"
+      }
+    }
+  ]
+}
