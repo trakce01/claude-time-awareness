@@ -4,17 +4,13 @@
 
 an experiment. not a product, not a tool, not a feature request.
 
-i was working with claude code and realized something obvious that i'd never thought about...claude has no idea what time it is. like, at all. you can say "i have 2 hours" and it'll nod and then spend 45 minutes exploring three directions when you needed one, done.
+i was working with claude code and realized something obvious...claude has no idea what time it is. like, at all. you can say "i have 2 hours" and it'll nod and then spend 45 minutes exploring three directions when you needed one, done. it can't do something any human collaborator does instinctively: pace their work.
+
+you'd never have to tell a coworker "hey, we only have 30 minutes, maybe don't start a second exploration." they'd just...know. claude doesn't.
 
 so i tried something: what if claude just...knew the time? not rules about what to do with it. just the raw data. current time, how much is left. and then let it figure out what that means.
 
-this is that experiment. trying to see if giving claude the same sense of time as the person using it changes how it works.
-
-## the problem
-
-claude processes every turn in a vacuum. no sense of a clock ticking, a deadline approaching, or a session dragging on. it can't do something any human collaborator does instinctively: pace their work.
-
-you'd never have to tell a coworker "hey, we only have 30 minutes, maybe don't start a second exploration." they'd just...know. claude doesn't.
+this is that experiment.
 
 ## how it works
 
