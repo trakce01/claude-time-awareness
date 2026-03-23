@@ -14,17 +14,15 @@ this is that experiment.
 
 ## how it works
 
-two hooks inject a small timestamp before every tool call and every user message. the injection only fires when you've told claude a time constraint ("i have 2 hours", "need this by 4pm"). claude parses that, sets a deadline, and from that point on, it sees something like this on every action:
+two hooks inject a small timestamp before every tool call and every user message. the injection only fires when you've told claude a time constraint ("i have 2 hours", "gotta be done by 4", "quick one, maybe 20 minutes"). claude parses that, sets a deadline, and from that point on, it sees something like this on every action:
 
 ```
 [3:15 PM | ~75 min remaining]
 ```
 
-that's it. no rules about what to do with the information. no "at 50% switch to execution mode." just the data, and claude's own reasoning.
-
 ## try it
 
-### option 1: install as a plugin
+### option 1: install as a plugin (recommended)
 
 ```
 /plugin marketplace add trakce01/claude-time-awareness
@@ -50,7 +48,8 @@ To clear a budget: `rm -f /tmp/claude-time-budget-$PPID`
 No budget file = no injections = no time pressure.
 ```
 
-### option 2: manual setup
+<details>
+<summary>option 2: manual setup</summary>
 
 1. copy `scripts/time-awareness.sh` to `~/.claude/hooks/time-awareness.sh`
 2. make it executable: `chmod +x ~/.claude/hooks/time-awareness.sh`
@@ -82,6 +81,8 @@ No budget file = no injections = no time pressure.
 ```
 
 4. add the same CLAUDE.md snippet from option 1 above
+
+</details>
 
 ### test it
 
