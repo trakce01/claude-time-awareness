@@ -1,0 +1,10 @@
+{
+  "name": "time-awareness",
+  "version": "0.1.0",
+  "description": "Give Claude Code a functional sense of time through passive hook injections",
+  "author": {
+    "name": "Rishit Kurup"
+  },
+  "repository": "https://github.com/trakce01/claude-time-awareness",
+  "license": "MIT"
+}
