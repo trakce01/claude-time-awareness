@@ -1,15 +1,5 @@
 {
   "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cat ${CLAUDE_PLUGIN_ROOT}/scripts/time-instructions.txt"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "hooks": [

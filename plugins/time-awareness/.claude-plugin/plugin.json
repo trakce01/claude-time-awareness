@@ -1,6 +1,6 @@
 {
   "name": "time-awareness",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Give Claude Code a functional sense of time through passive hook injections",
   "author": {
     "name": "Rishit Kurup"
