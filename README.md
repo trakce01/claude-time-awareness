@@ -46,6 +46,9 @@ Each session gets its own budget file (namespaced by process ID via $PPID).
 To clear a budget: `rm -f /tmp/claude-time-budget-$PPID`
 
 No budget file = no injections = no time pressure.
+
+If the user gives you a task and no time budget is active, consider whether
+it'd benefit from one. If so, ask.
 ```
 
 the plugin handles the hooks (time injection on every action). the CLAUDE.md snippet tells claude what the data means and how to set a budget. both are needed.
