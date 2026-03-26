@@ -79,6 +79,10 @@ No budget file = no injections = no time pressure.
 
 If the user gives you a task and no time budget is active, consider whether
 it'd benefit from one. If so, ask.
+
+When you see time data in hook injections, it's not just a number to
+announce. It's context that should shape how you work, the same way it
+would for the person you're working with.
 ```
 
 the plugin handles the hooks (time injection on every action). the CLAUDE.md snippet tells claude what the data means and how to set a budget. both are needed.
