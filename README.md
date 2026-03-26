@@ -20,6 +20,36 @@ two hooks inject a small timestamp before every tool call and every user message
 [3:15 PM | ~75 min remaining]
 ```
 
+if you want to see the countdown yourself (not just claude), you can add this to your statusline script (`~/.claude/statusline.sh`). it checks for the budget file and appends remaining time:
+
+```bash
+# Check for time budget
+BUDGET_FILE="/tmp/claude-time-budget-$PPID"
+TIME_DISPLAY=""
+if [ -f "$BUDGET_FILE" ]; then
+    DEADLINE=$(cat "$BUDGET_FILE" 2>/dev/null)
+    if [ -n "$DEADLINE" ]; then
+        NOW=$(date +%s)
+        DIFF=$((DEADLINE - NOW))
+        if [ "$DIFF" -le 0 ]; then
+            TIME_DISPLAY=" | budget expired"
+        else
+            HOURS=$((DIFF / 3600))
+            MINS=$(( (DIFF % 3600) / 60 ))
+            if [ "$HOURS" -gt 0 ] && [ "$MINS" -gt 0 ]; then
+                TIME_DISPLAY=" | ~${HOURS}h ${MINS}m left"
+            elif [ "$HOURS" -gt 0 ]; then
+                TIME_DISPLAY=" | ~${HOURS}h left"
+            else
+                TIME_DISPLAY=" | ~${MINS}m left"
+            fi
+        fi
+    fi
+fi
+```
+
+then append `$TIME_DISPLAY` to your existing printf. it updates whenever claude responds, not in real-time, but enough to glance at.
+
 ## try it
 
 ### option 1: install as a plugin (recommended)
